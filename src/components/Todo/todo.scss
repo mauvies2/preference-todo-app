@@ -1,0 +1,28 @@
+.todo {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.2rem 0.4rem;
+  .todo-category {
+    width: 12%;
+    padding: 0.4rem;
+  }
+  .todo-category.description {
+    width: 56%;
+  }
+  .todo-category.action {
+    width: 4%;
+  }
+}
+
+// textarea when editing
+.title textarea {
+  width: 15%;
+  min-height: 1.8rem;
+  height: 1.8rem;
+}
+.description textarea {
+  width: 70%;
+  min-height: 1.8rem;
+  height: 1.8rem;
+}

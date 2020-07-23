@@ -1,0 +1,14 @@
+@import "./styles/resets";
+@import "./styles/normalize";
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.table thead tr {
+  border: none;
+}

@@ -1,8 +1,16 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
+
+import Nav from "./components/Nav";
+import Main from "./components/Main";
 
 function App() {
-  return <div className="App">hola</div>;
+  return (
+    <div className="app">
+      <Nav />
+      <Main />
+    </div>
+  );
 }
 
 export default App;

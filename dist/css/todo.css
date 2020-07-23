@@ -1,0 +1,36 @@
+.todo {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 0.2rem 0.4rem;
+}
+
+.todo .todo-category {
+  width: 12%;
+  padding: 0.4rem;
+}
+
+.todo .todo-category.description {
+  width: 56%;
+}
+
+.todo .todo-category.action {
+  width: 4%;
+}
+
+.title textarea {
+  width: 15%;
+  min-height: 1.8rem;
+  height: 1.8rem;
+}
+
+.description textarea {
+  width: 70%;
+  min-height: 1.8rem;
+  height: 1.8rem;
+}
+/*# sourceMappingURL=todo.css.map */
