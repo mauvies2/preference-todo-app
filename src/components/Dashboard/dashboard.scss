@@ -17,16 +17,21 @@
   display: flex;
   justify-content: space-evenly;
   padding: 0.8rem 0.4rem;
-  // border: 1px solid lightgray;
   background-color: #2a455fb4;
   color: #fff;
   border-radius: 6px 6px 0 0;
 
   .title-category {
-    width: 15%;
+    width: 12%;
     padding: 0.4rem;
   }
+  .title-category.title {
+    width: 16%;
+  }
   .title-category.description {
-    width: 55%;
+    width: 56%;
+  }
+  .title-category.action {
+    width: 8%;
   }
 }

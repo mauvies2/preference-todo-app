@@ -31,16 +31,6 @@ function Nav() {
             </Link>
           </li>
         </ul>
-        <form className="form-inline my-2 my-lg-0 mr-5">
-          <input
-            className="form-control mr-sm-2"
-            type="text"
-            placeholder="Search"
-          />
-          <button className="btn btn-secondary my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
         <ul className="navbar-nav ">
           <li className="nav-item">
             <Link className="nav-link" to="/register">

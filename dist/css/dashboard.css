@@ -35,11 +35,19 @@
 }
 
 .todos-header .title-category {
-  width: 15%;
+  width: 12%;
   padding: 0.4rem;
 }
 
+.todos-header .title-category.title {
+  width: 16%;
+}
+
 .todos-header .title-category.description {
-  width: 55%;
+  width: 56%;
+}
+
+.todos-header .title-category.action {
+  width: 8%;
 }
 /*# sourceMappingURL=dashboard.css.map */

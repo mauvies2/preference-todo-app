@@ -3,26 +3,32 @@
   display: flex;
   justify-content: space-evenly;
   padding: 0.2rem 0.4rem;
+  .todo-category-text {
+    display: flex;
+    width: 68%;
+  }
   .todo-category {
-    width: 12%;
+    display: flex;
+    align-items: center;
     padding: 0.4rem;
-  }
-  .todo-category.description {
-    width: 56%;
-  }
-  .todo-category.action {
-    width: 4%;
+    &.title {
+      width: 20%;
+    }
+    &.description {
+      width: 80%;
+    }
+    &.action {
+      width: 4%;
+    }
   }
 }
 
 // textarea when editing
-.title textarea {
-  width: 15%;
-  min-height: 1.8rem;
-  height: 1.8rem;
+.todo-category input {
+  width: 90%;
+  padding: 0.2rem;
 }
-.description textarea {
-  width: 70%;
-  min-height: 1.8rem;
-  height: 1.8rem;
+
+.action-icon {
+  cursor: pointer;
 }

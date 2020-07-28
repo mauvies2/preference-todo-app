@@ -4,12 +4,20 @@ import Todo from "../Todo/Todo";
 
 import "./todos.scss";
 
-function Todos({ todos }) {
+function Todos(props) {
   return (
     <section className="todos">
-      {todos.map((todo) => {
-        return <Todo key={todo.id} todo={todo} />;
-      })}
+      {props.todos &&
+        props.todos.map((todo) => {
+          return (
+            <Todo
+              key={todo._id}
+              todo={todo}
+              editTodo={props.editTodo}
+              deleteTodo={props.deleteTodo}
+            />
+          );
+        })}
     </section>
   );
 }

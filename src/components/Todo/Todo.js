@@ -5,26 +5,56 @@ import { FaRegEdit } from "react-icons/fa";
 
 import "./todo.scss";
 
-function Todo({ todo }) {
-  const { title, description, severity, status } = todo;
-  const severityOpt = ["Low", "Med", "High"];
-  const statusOpt = ["To do", "Doing", "Done"];
+function Todo(props) {
+  const { todo } = props;
 
-  const [editTitle, setEditTitle] = useState(false);
-  const [editDescription, setEditDescription] = useState(false);
-  const [actualSeverity, setActualSeverity] = useState(severityOpt[severity]);
-  const [actualStatus, setActualStatus] = useState(statusOpt[status]);
+  const [edit, setEdit] = useState(false);
+  const [actualSeverity, setActualSeverity] = useState(todo.severity);
+  const [actualStatus, setActualStatus] = useState(todo.status);
+
+  const [editedTodo, setEditedTodo] = useState(todo);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setEditedTodo({ ...editedTodo, [name]: value });
+  };
+
+  const submit = (e) => {
+    e.preventDefault();
+    props.editTodo(editedTodo.id, editedTodo);
+    setEdit(!edit);
+  };
 
   return (
     <div className="todo">
-      <div className="todo-category">
-        {!editTitle ? title : <textarea></textarea>}
-      </div>
-      <div className="todo-category description">
-        {!editDescription ? description : <textarea></textarea>}
-      </div>
+      {!edit ? (
+        <div className="todo-category-text">
+          <div className="todo-category title">{editedTodo.title}</div>
+          <div className="todo-category description">
+            {editedTodo.description}
+          </div>
+        </div>
+      ) : (
+        <form className="todo-category-text" onSubmit={(e) => submit(e)}>
+          <div className="todo-category title">
+            <input
+              name="title"
+              value={editedTodo.title}
+              onChange={handleInputChange}
+            ></input>
+          </div>
+          <div className="todo-category description">
+            <input
+              name="description"
+              value={editedTodo.description}
+              onChange={handleInputChange}
+            ></input>
+          </div>
+          <button style={{ display: "none" }}></button>
+        </form>
+      )}
 
-      <div className="todo-category">
+      <div className="todo-category dropdown">
         <Dropdown>
           <Dropdown.Toggle
             variant="success"
@@ -53,7 +83,7 @@ function Todo({ todo }) {
           </Dropdown.Menu>
         </Dropdown>
       </div>
-      <div className="todo-category">
+      <div className="todo-category dropdown">
         <Dropdown>
           <Dropdown.Toggle
             variant="success"
@@ -77,10 +107,13 @@ function Todo({ todo }) {
         </Dropdown>
       </div>
       <div className="todo-category action">
-        <FaRegEdit className="find-tour-icon" />
+        <FaRegEdit className="action-icon" onClick={() => setEdit(!edit)} />
       </div>
       <div className="todo-category action">
-        <RiDeleteBin6Line className="find-tour-icon" />
+        <RiDeleteBin6Line
+          className="action-icon"
+          onClick={() => props.deleteTodo(todo._id)}
+        />
       </div>
     </div>
   );
